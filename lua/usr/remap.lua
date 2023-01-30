@@ -18,3 +18,6 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- does not replace copy-register when pasting in
 -- a visually selected word
 vim.keymap.set("x", "<leader>p", "\"_dP")
+
+-- remove highlights
+vim.keymap.set("n", "<leader>h", ":noh<CR>")
