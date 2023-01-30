@@ -29,6 +29,8 @@ return require('packer').startup(function(use)
 	  end,
   }
 
+  -- Language Server
+
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v1.x',
@@ -52,9 +54,20 @@ return require('packer').startup(function(use)
 	  }
   }
 
+  use "mfussenegger/nvim-lint"
 
   -- keeps undo across everything
   use "mbbill/undotree"
+
+  -- in-line diagnostics
+  use {
+      "folke/trouble.nvim",
+      requires = "nvim-tree/nvim-web-devicons",
+      config = function()
+          require("trouble").setup {}
+      end
+  }
+
 
   -- debugger
   use {
@@ -64,6 +77,5 @@ return require('packer').startup(function(use)
 		  require'dap-python'.setup('~/.config/nvim/.virtualenvs/debugpy/bin/python')
 		  require'dap-python'.test_runner = 'pytest'
 	  end
-	
   }
 end)
