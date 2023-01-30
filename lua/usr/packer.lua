@@ -70,6 +70,12 @@ return require('packer').startup(function(use)
       end
   }
 
+  -- statusline
+  use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+
 
   -- debugger
   use {
