@@ -5,11 +5,11 @@ My nvim-config based on [0 to LSP: Neovim RC From Scratch](https://www.youtube.c
 
 ## To do
 
--[ ] linters on save
--[ ] floating terminal
--[ ] lazygit integration
--[ ] leader-bar showing possible options
--[ ] make sure lsp works with python
--[ ] make sure debugger works with pytest
--[ ] open autocomplete menu on `<C-Space>`
--[ ] store config in git-repo
+- [ ] linters on save
+- [ ] floating terminal
+- [ ] lazygit integration
+- [ ] leader-bar showing possible options
+- [ ] make sure lsp works with python
+- [ ] make sure debugger works with pytest
+- [ ] open autocomplete menu on `<C-Space>`
+- [ ] store config in git-repo
