@@ -55,6 +55,8 @@ return require('packer').startup(function(use)
   }
 
   use "mfussenegger/nvim-lint"
+  -- lsp-colors 
+  use 'folke/lsp-colors.nvim'
 
   -- keeps undo across everything
   use "mbbill/undotree"
