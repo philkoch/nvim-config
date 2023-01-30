@@ -86,4 +86,6 @@ return require('packer').startup(function(use)
 		  require'dap-python'.test_runner = 'pytest'
 	  end
   }
+
+  use "numToStr/FTerm.nvim"
 end)
