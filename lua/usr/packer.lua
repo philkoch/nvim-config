@@ -54,6 +54,10 @@ return require('packer').startup(function(use)
 	  }
   }
 
+  -- formatter
+  use { 'mhartington/formatter.nvim' }
+
+  -- linter
   use "mfussenegger/nvim-lint"
   -- lsp-colors 
   use 'folke/lsp-colors.nvim'
