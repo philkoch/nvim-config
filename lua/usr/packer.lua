@@ -96,4 +96,7 @@ return require("packer").startup(function(use)
 
 	-- lazygit inside nvim
 	use("kdheepak/lazygit.nvim")
+
+	-- popup that displays possible key combinations on <leader>
+	use("folke/which-key.nvim")
 end)

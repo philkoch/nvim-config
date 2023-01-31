@@ -19,6 +19,7 @@ The following plugins are used:
 | [formatter](https://github.com/mhartington/formatter.nvim) | autoformat files on save |
 | [FTerm](https://github.com/numToStr/FTerm.nvim) | a floating terminal inside neovim |
 | [lazygit-nvim](https://github.com/kdheepak/lazygit.nvim) | lazygit integration |
+| [which-key](https://github.com/folke/which-key.nvim) | shows configured keymappings on <leader> |
 
 
 ## nvim-dap-python post-install
@@ -54,9 +55,9 @@ with `*.py`-files
 - [X] linters on save
 - [X] floating terminal
 - [X] lazygit integration
-- [ ] leader-bar showing possible options
+- [X] leader-bar showing possible options
 - [ ] make sure lsp works with python
 - [ ] make sure debugger works with pytest
-- [ ] open autocomplete menu on `<C-Space>`
+- [X] open autocomplete menu on `<C-Space>`
 - [X] store config in git-repo
 - [ ] use system clipboard

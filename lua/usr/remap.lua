@@ -1,6 +1,5 @@
+-- set leader key to <Space>
 vim.g.mapleader = " "
--- while in normal mode pv is executed
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- moves selected lines up or down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -15,9 +14,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- does not replace copy-register when pasting in
--- a visually selected word
-vim.keymap.set("x", "<leader>p", "\"_dP")
-
--- remove highlights
-vim.keymap.set("n", "<leader>h", ":noh<CR>")
+-- easier indent in visualmode
+vim.keymap.set("v", ">", ">> gv=gv")
+vim.keymap.set("v", "<", "<< gv=gv")
