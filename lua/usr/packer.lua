@@ -1,5 +1,3 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
 -- Only required if you have packer configured as `opt`
 vim.cmd([[packadd packer.nvim]])
 
@@ -8,19 +6,18 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	-- Simple plugins can be specified as strings
 	use("rstacruz/vim-closer")
-
 	-- fuzzy finder
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.1",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
+	-- file explorer
+	use({ "nvim-telescope/telescope-file-browser.nvim" })
 	-- better performance for fuzzy finder
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-
 	-- coloschemes
 	use("EdenEast/nightfox.nvim")
-
 	-- treesitter for code parsing
 	use({
 		"nvim-treesitter/nvim-treesitter",
@@ -29,9 +26,7 @@ return require("packer").startup(function(use)
 			ts_update()
 		end,
 	})
-
 	-- Language Server
-
 	use({
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v1.x",
@@ -54,18 +49,14 @@ return require("packer").startup(function(use)
 			{ "rafamadriz/friendly-snippets" }, -- Optional
 		},
 	})
-
 	-- formatter
 	use({ "mhartington/formatter.nvim" })
-
 	-- linter
 	use("mfussenegger/nvim-lint")
 	-- lsp-colors
 	use("folke/lsp-colors.nvim")
-
 	-- keeps undo across everything
 	use("mbbill/undotree")
-
 	-- in-line diagnostics
 	use({
 		"folke/trouble.nvim",
@@ -74,13 +65,11 @@ return require("packer").startup(function(use)
 			require("trouble").setup({})
 		end,
 	})
-
 	-- statusline
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
-
 	-- debugger
 	use({
 		"mfussenegger/nvim-dap-python",
@@ -90,16 +79,12 @@ return require("packer").startup(function(use)
 			require("dap-python").test_runner = "pytest"
 		end,
 	})
-
 	-- floating terminal
 	use("numToStr/FTerm.nvim")
-
 	-- lazygit inside nvim
 	use("kdheepak/lazygit.nvim")
-
 	-- popup that displays possible key combinations on <leader>
 	use("folke/which-key.nvim")
-
 	-- lsp supported comments
 	use("numToStr/Comment.nvim")
 end)

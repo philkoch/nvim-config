@@ -13,11 +13,11 @@ wk.register({
 		g = { telescope_builtin.git_files, "Find Git File" },
 		h = { telescope_builtin.help_tags, "Find Help" },
 		r = { telescope_builtin.old_files, "Find Recent File" },
+		e = { require("telescope").extensions.file_browser.file_browser, "Open File Browser", noremap = true },
 	},
 }, { prefix = "<leader>" })
 
 -- mason keymaps
-local mason = require("mason")
 wk.register({
 	m = {
 		name = " MASON",
