@@ -99,4 +99,7 @@ return require("packer").startup(function(use)
 
 	-- popup that displays possible key combinations on <leader>
 	use("folke/which-key.nvim")
+
+	-- lsp supported comments
+	use("numToStr/Comment.nvim")
 end)
