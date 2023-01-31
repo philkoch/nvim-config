@@ -15,12 +15,15 @@ The following plugins are used:
 | [telescope-nvim](https://github.com/nvim-telescope/telescope.nvim) | Fuzzy Finder |
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | Syntax Highlighting and more syntax-tree functionality |
 | [undotree](https://github.com/mbbill/undotree) | keeps track of changes in files |
-| [trouble.nvim](https://github.com/folke/trouble.nvim) | in-line diagnostics|
+| [trouble.nvim](https://github.com/folke/trouble.nvim) | in-line diagnostics |
+| [formatter](https://github.com/mhartington/formatter.nvim) | autoformat files on save |
+| [FTerm](https://github.com/numToStr/FTerm.nvim) | a floating terminal inside neovim |
+| [lazygit-nvim](https://github.com/kdheepak/lazygit.nvim) | lazygit integration |
 
 
 ## nvim-dap-python post-install
 
-[nvim-dap-python](https://github.com/mfussenegger/nvim-dap-python) requires 
+[nvim-dap-python](https://github.com/mfussenegger/nvim-dap-python) requires
 debugpy to run. Since I like to keep everything that has to do with neovim in
 one folder. I've created a `.virtualenvs` subfolder and installed it there
 
@@ -38,13 +41,19 @@ in neovim run (:warning:treesitter-plugin required!!)
 :TSInstall python
 ```
 
+## formatter post-install
+
+The formatter uses an external instance of black, you need
+[black](https://github.com/psf/black) installed on your system, when working
+with `*.py`-files
+
 ---
 
 ## To do
 
-- [x] linters on save
-- [ ] floating terminal
-- [ ] lazygit integration
+- [X] linters on save
+- [X] floating terminal
+- [X] lazygit integration
 - [ ] leader-bar showing possible options
 - [ ] make sure lsp works with python
 - [ ] make sure debugger works with pytest
