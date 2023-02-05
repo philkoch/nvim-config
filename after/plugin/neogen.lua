@@ -25,7 +25,6 @@ wk.register({
 			noremap = true,
 			silent = true,
 		},
-		"Document Function",
 	},
 }, { prefix = "<leader>" })
 wk.setup()

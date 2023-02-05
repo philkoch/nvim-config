@@ -35,7 +35,7 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "88"
 
 -- enables in-line diagnostics
 vim.diagnostic.config({
