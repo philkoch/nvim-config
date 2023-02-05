@@ -54,5 +54,4 @@ with `*.py`-files
 
 ## Improvements
 
-- [ ] FTerm single line border
 - [ ] telescope recent files not working
