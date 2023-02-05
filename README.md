@@ -22,6 +22,7 @@ The following plugins are used:
 | [lazygit-nvim](https://github.com/kdheepak/lazygit.nvim) | lazygit integration |
 | [which-key](https://github.com/folke/which-key.nvim) | shows configured keymappings on <leader> |
 | [comment](https://github.com/numToStr/Comment.nvim) | context aware comments |
+| [luasnip](https://github.com/L3MON4D3/LuaSnip) | allows to define code snippets |
 
 ---
 
@@ -55,4 +56,3 @@ with `*.py`-files
 
 - [ ] FTerm single line border
 - [ ] telescope recent files not working
-- [ ] 
