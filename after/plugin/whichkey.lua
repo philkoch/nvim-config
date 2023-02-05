@@ -9,10 +9,12 @@ wk.register({
 	f = {
 		name = " FIND",
 		b = { telescope_builtin.buffers, "Find Buffer" },
+		c = { telescope_builtin.command_history, "Find Command" },
 		f = { telescope_builtin.find_files, "Find File" },
-		g = { telescope_builtin.git_files, "Find Git File" },
+		t = { telescope_builtin.live_grep, "Find Text" },
 		h = { telescope_builtin.help_tags, "Find Help" },
-		r = { telescope_builtin.old_files, "Find Recent File" },
+		r = { telescope_builtin.oldfiles, "Find Recent File" },
+		j = { telescope_builtin.jumplist, "Find Jump" },
 		e = { require("telescope").extensions.file_browser.file_browser, "Open File Browser", noremap = true },
 	},
 }, { prefix = "<leader>" })

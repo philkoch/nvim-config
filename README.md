@@ -54,4 +54,4 @@ with `*.py`-files
 
 ## Improvements
 
-- [ ] telescope recent files not working
+-[ ] vale throws error
