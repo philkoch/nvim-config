@@ -4,6 +4,7 @@ My nvim-config based on [0 to LSP: Neovim RC From Scratch](https://www.youtube.c
 To use the configuration you need to copy the folder into your neovim-configuration folder (default: `~/.config/nvim`), start
 up neovim, run `:PackerSync` and check the config for `post-install` sections for the plugins.
 
+> Check `./after/plugins` for configurations of each plugin
 
 The following plugins are used:
 
@@ -24,6 +25,7 @@ The following plugins are used:
 | [comment](https://github.com/numToStr/Comment.nvim) | context aware comments |
 | [luasnip](https://github.com/L3MON4D3/LuaSnip) | allows to define code snippets |
 | [catppuccin](https://github.com/catppuccin/nvim) | colorscheme |
+| [neogen](https://github.com/danymat/neogen) | generates documentation |
 
 ---
 
@@ -53,6 +55,5 @@ The formatter uses an external instance of black, you need
 [black](https://github.com/psf/black) installed on your system, when working
 with `*.py`-files
 
-## Improvements
-
--[ ] vale throws error
+## Improvements / Issues
+- [ ] Debug pytest file

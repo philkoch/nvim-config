@@ -86,4 +86,10 @@ return require("packer").startup(function(use)
 	use("folke/which-key.nvim")
 	-- lsp supported comments
 	use("numToStr/Comment.nvim")
+	-- automatic documentation generation
+	use({
+		"danymat/neogen",
+		requires = "nvim-treesitter/nvim-treesitter",
+		tag = "*",
+	})
 end)
