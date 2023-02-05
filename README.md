@@ -23,6 +23,7 @@ The following plugins are used:
 | [which-key](https://github.com/folke/which-key.nvim) | shows configured keymappings on <leader> |
 | [comment](https://github.com/numToStr/Comment.nvim) | context aware comments |
 | [luasnip](https://github.com/L3MON4D3/LuaSnip) | allows to define code snippets |
+| [catppuccin](https://github.com/catppuccin/nvim) | colorscheme |
 
 ---
 

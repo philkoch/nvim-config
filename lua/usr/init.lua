@@ -1,5 +1,8 @@
 -- neovim options
-vim.cmd("colorscheme nightfox")
+
+-- colorscheme
+-- vim.cmd.colorscheme("nightfox")
+vim.cmd.colorscheme("catppuccin")
 
 -- line numbers
 vim.opt.nu = true

@@ -18,6 +18,7 @@ return require("packer").startup(function(use)
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 	-- coloschemes
 	use("EdenEast/nightfox.nvim")
+	use({ "catppuccin/nvim", as = "catppuccin" })
 	-- treesitter for code parsing
 	use({
 		"nvim-treesitter/nvim-treesitter",
