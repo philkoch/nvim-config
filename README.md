@@ -50,3 +50,9 @@ in neovim run (:warning:treesitter-plugin required!!)
 The formatter uses an external instance of black, you need
 [black](https://github.com/psf/black) installed on your system, when working
 with `*.py`-files
+
+## Improvements
+
+- [ ] FTerm single line border
+- [ ] telescope recent files not working
+- [ ] 

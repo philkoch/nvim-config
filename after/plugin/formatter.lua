@@ -7,12 +7,17 @@ local formatter = require("formatter")
 formatter.setup({
 	logging = true,
 	log_level = vim.log.levels.WARN,
-	-- All formatter configurations are opt-in
 	filetype = {
-		-- Formatter configurations for filetype "lua" go here
-		-- and will be executed in order
 		lua = {
 			require("formatter.filetypes.lua").stylua,
+		},
+		json = {
+			function()
+				return {
+					exe = "jq",
+					stdin = true,
+				}
+			end,
 		},
 		python = {
 			require("formatter.filetypes.python").isort,
