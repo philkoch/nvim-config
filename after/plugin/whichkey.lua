@@ -55,4 +55,20 @@ wk.register({
 	x = "  TROUBLE TOGGLE",
 }, { prefix = "<leader>" })
 
+-- debugger
+wk.register({
+	d = {
+		name = " DEBUG",
+		c = { "<cmd>lua require('dap').continue()<CR>", "Continue" },
+		x = { "<cmd>lua require('dap').terminate()<CR>", "Stop" },
+		m = { "<cmd>lua require('dap-python').test_method()<CR>", "Test Method" },
+		b = { "<cmd>lua require('dap').toggle_breakpoint()<CR>", "Toggle Breakpoint" },
+		o = { "<cmd>lua require('dap').step_over()<CR>", "Step Over" },
+		i = { "<cmd>lua require('dap').step_into()<CR>", "Step Into" },
+		u = { "<cmd>lua require('dap').step_into()<CR>", "Step Out" },
+		r = { "<cmd>lua require('dap').restart()<CR>", "Restart Session" },
+		p = { "<cmd>lua require('dap').repl.open()<CR>", "Open REPL" },
+	},
+}, { prefix = "<leader>" })
+
 wk.setup()

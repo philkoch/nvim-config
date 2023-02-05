@@ -74,11 +74,9 @@ return require("packer").startup(function(use)
 	use({
 		"mfussenegger/nvim-dap-python",
 		requires = { "mfussenegger/nvim-dap" },
-		config = function()
-			require("dap-python").setup("~/.config/nvim/.virtualenvs/debugpy/bin/python")
-			require("dap-python").test_runner = "pytest"
-		end,
 	})
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+
 	-- floating terminal
 	use("numToStr/FTerm.nvim")
 	-- lazygit inside nvim
