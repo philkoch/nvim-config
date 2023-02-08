@@ -11,6 +11,7 @@ lsp.ensure_installed({
 
 local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
+local cmp_compare = cmp.config.compare
 local cmp_mappings = lsp.defaults.cmp_mappings({
 	["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
 	["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
@@ -20,6 +21,19 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 
 lsp.setup_nvim_cmp({
 	mapping = cmp_mappings,
+	sorting = {
+		comparators = {
+			cmp_compare.offset,
+			cmp_compare.exact,
+			cmp_compare.score,
+			cmp_compare.recently_used,
+			cmp_compare.locality,
+			cmp_compare.kind,
+			cmp_compare.sort_text,
+			cmp_compare.length,
+			cmp_compare.order,
+		},
+	},
 })
 
 lsp.on_attach(function(client, bufnr)
