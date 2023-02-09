@@ -1,5 +1,54 @@
+-- neovim configs
+
 -- set leader key to <Space>
 vim.g.mapleader = " "
+
+-- line numbers
+vim.opt.nu = true
+-- relative line numbers
+vim.opt.relativenumber = true
+-- set tabs to 4 spaces instead of 8
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+-- convert tabs to spaces
+vim.opt.expandtab = true
+
+-- does smart autoindenting when starting a new line
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+
+-- prevents wrapping of long lines
+vim.opt.wrap = false
+
+vim.opt.swapfile = false
+-- better undos
+vim.opt.undodir = os.getenv("HOME") .. "/.config/.nvim/undo"
+vim.opt.undofile = true
+
+vim.opt.hlsearch = true
+vim.opt.incsearch = true
+
+vim.opt.termguicolors = true
+-- minimum number of screen lines to keep above and below the cursor
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes"
+
+vim.opt.colorcolumn = "88"
+
+-- enables in-line diagnostics
+vim.diagnostic.config({
+	virtual_text = true,
+	signs = true,
+	underline = true,
+	update_in_insert = false,
+	severity_sort = false,
+})
+-- disables displaying of mode (this is done by lualine also)
+vim.opt.showmode = false
+
+-- hide commandline when it's not used
+vim.opt.cmdheight = 0
 
 -- moves selected lines up or down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -31,5 +80,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- load package manager
+-- load plugins
 require("lazy").setup("plugins")
+
+-- set colorscheme after loading plugins
+vim.cmd.colorscheme("catppuccin")
+
