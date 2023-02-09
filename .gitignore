@@ -1,3 +1,4 @@
 .virtualenvs
 undo
 ./plugin
+lazy-lock.json
