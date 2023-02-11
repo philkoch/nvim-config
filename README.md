@@ -65,8 +65,6 @@ from the package repo of your distro.
 
 ## Improvements / Issues
 - [ ] Debug pytest file
-- [ ] easier buffer-window resizing
-- [ ] fast switch buffers with ctrl+hjkl instead of ctrl+w hjkl
 - [ ] see if poetry shell can be activated automatically when nvim is started
 - [ ] re-order dap-ui windows (variables top left, watches bottom left)
 - [ ] dap -- see if it's possible that not all buffers are changed to the current breakpoint
