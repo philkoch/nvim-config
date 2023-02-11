@@ -36,15 +36,7 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.colorcolumn = "88"
 
--- enables in-line diagnostics
-vim.diagnostic.config({
-	virtual_text = true,
-	signs = true,
-	underline = true,
-	update_in_insert = false,
-	severity_sort = false,
-})
--- disables displaying of mode (this is done by lualine also)
+-- disables displaying of mode (this is done by lualine)
 vim.opt.showmode = false
 
 -- hide commandline when it's not used
