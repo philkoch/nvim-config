@@ -67,6 +67,17 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("v", ">", ">> gv=gv")
 vim.keymap.set("v", "<", "<< gv=gv")
 
+-- open :help in vertical split
+vim.api.nvim_create_autocmd("BufWinEnter", {
+	group = vim.api.nvim_create_augroup("help_window_right", {}),
+	pattern = { "*.txt" },
+	callback = function()
+		if vim.o.filetype == "help" then
+			vim.cmd.wincmd("L")
+		end
+	end,
+})
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -74,7 +85,7 @@ if not vim.loop.fs_stat(lazypath) then
 		"clone",
 		"--filter=blob:none",
 		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
+		"--branch=stable",
 		lazypath,
 	})
 end
@@ -85,4 +96,3 @@ require("lazy").setup("plugins")
 
 -- set colorscheme after loading plugins
 vim.cmd.colorscheme("catppuccin")
-
