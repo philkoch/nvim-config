@@ -2,15 +2,15 @@
 
 My nvim-config based on [0 to LSP: Neovim RC From Scratch](https://www.youtube.com/watch?v=w7i4amO_zaE) from [ThePrimagen](https://github.com/ThePrimeagen).
 To use the configuration you need to copy the folder into your neovim-configuration folder (default: `~/.config/nvim`), start
-up neovim, run `:PackerSync` and check the config for `post-install` sections for the plugins.
+up neovim, run `:Lazy` and check the config for `post-install` sections for the plugins.
 
-> Check `./after/plugins` for configurations of each plugin
+> Check `./lua/plugins` for configurations of each plugin
 
 The following plugins are used:
 
 | Plugin | Description |
 |--------|-------------|
-| [packer.nvim](https://github.com/wbthomason/packer.nvim) | Plugin Manager |
+| [lazy.nvim](https://github.com/folke/lazy.nvim) | Plugin Manager |
 | [lsp-zero](https://github.com/VonHeikemen/lsp-zero.nvim) | Language Server for basic IDE functionality |
 | [nvim-dap-python](https://github.com/mfussenegger/nvim-dap-python) | Debugger for python | yes |
 | [telescope-nvim](https://github.com/nvim-telescope/telescope.nvim) | Fuzzy Finder |
@@ -26,6 +26,7 @@ The following plugins are used:
 | [luasnip](https://github.com/L3MON4D3/LuaSnip) | allows to define code snippets |
 | [catppuccin](https://github.com/catppuccin/nvim) | colorscheme |
 | [neogen](https://github.com/danymat/neogen) | generates documentation |
+| [peek](https://github.com/toppair/peek) | markdown file preview |
 
 ---
 
@@ -54,6 +55,12 @@ in neovim run (:warning:treesitter-plugin required!!)
 The formatter uses an external instance of black, you need
 [black](https://github.com/psf/black) installed on your system, when working
 with `*.py`-files
+
+## peek pre-install
+
+[deno](https://deno.land/) is required for the rendering markdown. Install it
+from the package repo of your distro.
+
 
 ## Improvements / Issues
 - [ ] Debug pytest file
