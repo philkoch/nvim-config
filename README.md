@@ -27,6 +27,7 @@ The following plugins are used:
 | [catppuccin](https://github.com/catppuccin/nvim) | colorscheme |
 | [neogen](https://github.com/danymat/neogen) | generates documentation |
 | [peek](https://github.com/toppair/peek) | markdown file preview |
+| [vim-wakatime](https://github.com/wakatime/vim-wakatime) | easy time-tracking |
 
 ---
 
