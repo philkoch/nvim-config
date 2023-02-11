@@ -59,13 +59,12 @@ with `*.py`-files
 
 ## peek pre-install
 
-[deno](https://deno.land/) is required for the rendering markdown. Install it
+[deno](https://deno.land/) is required for rendering markdown. Install it
 from the package repo of your distro.
 
 
 ## Improvements / Issues
 - [ ] Debug pytest file
-- [ ] see if poetry shell can be activated automatically when nvim is started
 - [ ] re-order dap-ui windows (variables top left, watches bottom left)
 - [ ] dap -- see if it's possible that not all buffers are changed to the current breakpoint
 - [ ] :h marks
