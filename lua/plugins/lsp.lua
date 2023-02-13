@@ -100,10 +100,11 @@ return {
 			-- poetry shell before opening neovim
 			on_new_config = function(config, root_dir)
 				local match = vim.fn.glob(vim.fn.getcwd() .. "/poetry.lock")
-				if match ~= "" then
+				local cur_venv = vim.env.VIRTUAL_ENV
+				if match ~= "" and cur_venv == nil or cur_venv == "" then
 					local venv_path = vim.fn.trim(vim.fn.system("poetry env info -p"))
 					vim.env.VIRTUAL_ENV = venv_path
-					vim.env.PATH = venv_path .. "bin:" .. vim.env.PATH
+					vim.env.PATH = venv_path .. "/bin:" .. vim.env.PATH
 					config.settings.python.pythonPath = venv_path .. "/bin/python"
 				end
 			end,
