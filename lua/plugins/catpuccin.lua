@@ -11,7 +11,12 @@ return {
 			dim_inactive = {
 				enabled = true,
 				shade = "dark",
-				percentage = 0.20,
+				percentage = 0.01,
+			},
+			integrations = {
+				cmp = true,
+				which_key = true,
+				telescope = true,
 			},
 		})
 	end,
