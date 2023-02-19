@@ -1,16 +1,19 @@
--- neovim configs
+-- OPTIONS >>>>>>>>
 
 -- set leader key to <Space>
 vim.g.mapleader = " "
 
 -- line numbers
 vim.opt.nu = true
+
 -- relative line numbers
 vim.opt.relativenumber = true
+
 -- set tabs to 4 spaces instead of 8
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
+
 -- convert tabs to spaces
 vim.opt.expandtab = true
 
@@ -21,19 +24,26 @@ vim.opt.smartindent = true
 -- prevents wrapping of long lines
 vim.opt.wrap = false
 
+-- don't create a swapfile
 vim.opt.swapfile = false
+
 -- better undos
 vim.opt.undodir = os.getenv("HOME") .. "/.config/.nvim/undo"
 vim.opt.undofile = true
 
+-- start searching while typing and
+-- highlight results
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
+-- use terminal gui colors
 vim.opt.termguicolors = true
+
 -- minimum number of screen lines to keep above and below the cursor
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 
+-- colored column indicating preferred max line length
 vim.opt.colorcolumn = "88"
 
 -- disables displaying of mode (this is done by lualine)
@@ -45,6 +55,11 @@ vim.opt.cmdheight = 0
 -- checks if buffer is already loaded and if so
 -- opens it in that window
 vim.opt.swb = "useopen"
+
+-- limit elements in pop-up windows to 8 (e.g. nvim-cmp)
+vim.opt.pumheight = 8
+
+-- KEY MAPPINGS >>>>>>>>
 
 -- moves selected lines up or down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -75,6 +90,8 @@ vim.keymap.set("n", "<C-Down>", ":resize +2<CR>")
 vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
 
+-- AUTOCOMMANDS >>>>>>>>
+
 -- open :help in vertical split
 vim.api.nvim_create_autocmd("BufWinEnter", {
 	group = vim.api.nvim_create_augroup("help_window_right", {}),
@@ -86,7 +103,8 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 	end,
 })
 
--- load plugin manager
+-- PLUGINS >>>>>>>>
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -100,8 +118,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- load plugins
 require("lazy").setup("plugins", { defaults = { lazy = false } })
 
--- set colorscheme after loading plugins
+-- COLORSCHEME >>>>>>>
+-- set colorscheme AFTER loading plugins
 vim.cmd.colorscheme("catppuccin")
