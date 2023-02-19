@@ -27,7 +27,7 @@ vim.opt.wrap = false
 -- don't create a swapfile
 vim.opt.swapfile = false
 
--- better undos
+-- better undos (the plugin `undotree` is also used)
 vim.opt.undodir = os.getenv("HOME") .. "/.config/.nvim/undo"
 vim.opt.undofile = true
 
@@ -41,6 +41,15 @@ vim.opt.termguicolors = true
 
 -- minimum number of screen lines to keep above and below the cursor
 vim.opt.scrolloff = 8
+
+-- number of columns the screen is moved when the cursor would leave it
+vim.opt.sidescroll = 1
+-- minimum number of columns to keep visible when scrolling horizontally
+vim.opt.sidescrolloff = 16
+
+-- adds a column next to the line numbers holding symbols
+-- for diagnostics or information like if a breakpoint is
+-- on that line
 vim.opt.signcolumn = "yes"
 
 -- colored column indicating preferred max line length
@@ -58,6 +67,12 @@ vim.opt.swb = "useopen"
 
 -- limit elements in pop-up windows to 8 (e.g. nvim-cmp)
 vim.opt.pumheight = 8
+
+-- open vertical split windows to the right
+vim.opt.splitright = true
+
+-- open horizontal split down
+vim.opt.splitbelow = true
 
 -- KEY MAPPINGS >>>>>>>>
 
