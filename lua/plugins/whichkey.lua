@@ -75,7 +75,7 @@ return {
 		wk.register({
 			d = {
 				name = " DEBUG",
-				c = { "<cmd>lua require('dap').continue()<CR>", "Continue" },
+				n = { "<cmd>lua require('dap').continue()<CR>", "Launch / Continue" },
 				x = { "<cmd>lua require('dap').terminate()<CR>", "Stop" },
 				m = { "<cmd>lua require('dap-python').test_method()<CR>", "Test Method" },
 				b = { "<cmd>lua require('dap').toggle_breakpoint()<CR>", "Toggle Breakpoint" },
@@ -84,6 +84,19 @@ return {
 				u = { "<cmd>lua require('dap').step_into()<CR>", "Step Out" },
 				r = { "<cmd>lua require('dap').restart()<CR>", "Restart Session" },
 				p = { "<cmd>lua require('dap').repl.open()<CR>", "Open REPL" },
+				c = {
+
+					function()
+						vim.ui.input({
+							prompt = "Enter condition:",
+						}, function(input)
+							if input ~= nil then
+								require("dap").toggle_breakpoint(input)
+							end
+						end)
+					end,
+					"Conditional Breakpoint",
+				},
 			},
 		}, { prefix = "<leader>" })
 

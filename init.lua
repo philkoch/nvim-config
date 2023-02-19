@@ -39,6 +39,8 @@ vim.opt.colorcolumn = "88"
 -- disables displaying of mode (this is done by lualine)
 vim.opt.showmode = false
 
+-- vertical split buffers open to the right
+
 -- hide commandline when it's not used
 vim.opt.cmdheight = 0
 
@@ -96,7 +98,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- load plugins
-require("lazy").setup("plugins")
+require("lazy").setup("plugins", {defaults = { lazy = false }})
 
 -- set colorscheme after loading plugins
 vim.cmd.colorscheme("catppuccin")
