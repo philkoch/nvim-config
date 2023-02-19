@@ -10,6 +10,27 @@ return {
 		dap_py.setup("~/.config/nvim/.virtualenvs/debugpy/bin/python")
 		dap_py.test_runner = "pytest"
 
+		vim.fn.sign_define(
+			"DapBreakpoint",
+			{ text = "", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
+		)
+		vim.fn.sign_define(
+			"DapBreakpointCondition",
+			{ text = "󱡴", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
+		)
+		vim.fn.sign_define(
+			"DapBreakpointRejected",
+			{ text = "", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
+		)
+		vim.fn.sign_define(
+			"DapLogPoint",
+			{ text = "", texthl = "DapLogPoint", linehl = "DapLogPoint", numhl = "DapLogPoint" }
+		)
+		vim.fn.sign_define(
+			"DapStopped",
+			{ text = "", texthl = "DapStopped", linehl = "DapStopped", numhl = "DapStopped" }
+		)
+		--
 		-- https://github.com/rcarriga/nvim-dap-ui
 		local dap, dapui = require("dap"), require("dapui")
 		dapui.setup()
