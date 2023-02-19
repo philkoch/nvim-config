@@ -19,6 +19,7 @@ return {
 				h = { telescope_builtin.help_tags, "Find Help" },
 				r = { telescope_builtin.oldfiles, "Find Recent File" },
 				j = { telescope_builtin.jumplist, "Find Jump" },
+				q = { telescope_builtin.quickfix, "Find QuickFix" },
 				e = { require("telescope").extensions.file_browser.file_browser, "Open File Browser", noremap = true },
 			},
 		}, { prefix = "<leader>" })

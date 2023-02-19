@@ -3,8 +3,7 @@ return {
 	version = "0.1.1",
 	dependencies = {
 		{ "nvim-lua/plenary.nvim" },
-		-- fuzzy finder
-		-- file explorer
+		-- fuzzy finder file explorer
 		{ "nvim-telescope/telescope-file-browser.nvim" },
 		-- better performance for fuzzy finder
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
