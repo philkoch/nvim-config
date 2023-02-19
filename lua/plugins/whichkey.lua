@@ -50,7 +50,7 @@ return {
 			},
 		}, { prefix = "<leader>" })
 
-		-- rest
+		-- others
 		wk.register({
 			g = {
 				name = " GIT",

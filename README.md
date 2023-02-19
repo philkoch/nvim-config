@@ -18,7 +18,6 @@ The following plugins are used:
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | Syntax Highlighting and more syntax-tree functionality |
 | [undotree](https://github.com/mbbill/undotree) | keeps track of changes in files |
 | [trouble.nvim](https://github.com/folke/trouble.nvim) | in-line diagnostics |
-| [formatter](https://github.com/mhartington/formatter.nvim) | autoformat files on save |
 | [FTerm](https://github.com/numToStr/FTerm.nvim) | a floating terminal inside neovim |
 | [lazygit-nvim](https://github.com/kdheepak/lazygit.nvim) | lazygit integration |
 | [which-key](https://github.com/folke/which-key.nvim) | shows configured keymappings on <leader> |
@@ -29,6 +28,8 @@ The following plugins are used:
 | [peek](https://github.com/toppair/peek) | markdown file preview |
 | [vim-wakatime](https://github.com/wakatime/vim-wakatime) | easy time-tracking |
 | [neodev](https://github.com/folke/neodev.nvim) | autocompletion for neovim apis |
+| [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) | general purpose lsp, runs formatters/linters |
+
 
 
 ---
@@ -73,3 +74,4 @@ from the package repo of your distro.
 - [x] lsp json server missing / not starting
 - [x] add input function for conditional breakpoint
 - [ ] check out lazy loading plugins
+- [x] replace formatter/linter with null-ls
