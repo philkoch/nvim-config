@@ -29,7 +29,6 @@ return {
 
 		lsp.preset("recommended")
 		lsp.ensure_installed({
-			"sumneko_lua",
 			"rust_analyzer",
 			"pyright",
 		})
@@ -87,10 +86,11 @@ return {
 			},
 			formatting = {
 				format = lspkind.cmp_format({
-					mode = "symbol",
 					preset = "default",
+					mode = "symbol",
 					ellipsis_char = "...",
 					symbol_map = {
+						-- preconfigured symbols don't work with my font
 						Class = "C",
 						Field = "F",
 						Unit = "U",
@@ -100,7 +100,7 @@ return {
 						nvim_lsp = "[LSP]",
 						nvim_lua = "[api]",
 						path = "[path]",
-						luasnip = "[snip]",
+						luasnip = "[snp]",
 					},
 				}),
 			},
@@ -113,6 +113,9 @@ return {
 			local opts = { buffer = bufnr, remap = false }
 			vim.keymap.set("n", "gd", function()
 				require("telescope.builtin").lsp_definitions()
+			end, opts)
+			vim.keymap.set("n", "gl", function()
+				require("telescope.builtin").diagnostics({ bufnr = bufnr })
 			end, opts)
 			vim.keymap.set("n", "<leader>lq", function()
 				vim.lsp.buf.hover()
@@ -169,5 +172,10 @@ return {
 			update_in_insert = false,
 			severity_sort = true,
 		})
+		-- set pretty diagnostics-signs in signcolumn
+		vim.fn.sign_define("DiagnosticSignError", { text = "" })
+		vim.fn.sign_define("DiagnosticSignWarn", { text = "" })
+		vim.fn.sign_define("DiagnosticSignInfo", { text = "" })
+		vim.fn.sign_define("DiagnosticSignHint", { text = "" })
 	end,
 }
