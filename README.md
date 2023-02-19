@@ -28,6 +28,8 @@ The following plugins are used:
 | [neogen](https://github.com/danymat/neogen) | generates documentation |
 | [peek](https://github.com/toppair/peek) | markdown file preview |
 | [vim-wakatime](https://github.com/wakatime/vim-wakatime) | easy time-tracking |
+| [neodev](https://github.com/folke/neodev.nvim) | autocompletion for neovim apis |
+
 
 ---
 

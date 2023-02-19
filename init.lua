@@ -84,6 +84,7 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 	end,
 })
 
+-- load plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -98,7 +99,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- load plugins
-require("lazy").setup("plugins", {defaults = { lazy = false }})
+require("lazy").setup("plugins", { defaults = { lazy = false } })
 
 -- set colorscheme after loading plugins
 vim.cmd.colorscheme("catppuccin")
