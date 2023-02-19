@@ -68,8 +68,8 @@ from the package repo of your distro.
 ## Improvements / Issues
 - [x] [Debug pytest file](https://github.com/mfussenegger/nvim-dap-python/issues/74)
 - [ ] re-order dap-ui windows (variables top left, watches bottom left)
-- [ ] dap -- see if it's possible that not all buffers are changed to the current breakpoint
+- [x] dap -- see if it's possible that not all buffers are changed to the current breakpoint
 - [ ] :h marks
 - [x] lsp json server missing / not starting
-- [ ] add input function for conditional breakpoint
+- [x] add input function for conditional breakpoint
 - [ ] check out lazy loading plugins

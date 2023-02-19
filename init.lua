@@ -39,10 +39,12 @@ vim.opt.colorcolumn = "88"
 -- disables displaying of mode (this is done by lualine)
 vim.opt.showmode = false
 
--- vertical split buffers open to the right
-
 -- hide commandline when it's not used
 vim.opt.cmdheight = 0
+
+-- checks if buffer is already loaded and if so
+-- opens it in that window
+vim.opt.swb = "useopen"
 
 -- moves selected lines up or down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
