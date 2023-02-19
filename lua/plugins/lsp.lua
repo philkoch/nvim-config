@@ -17,6 +17,7 @@ return {
 		{ "hrsh7th/cmp-nvim-lua" },
 		{ "hrsh7th/cmp-cmdline" },
 		{ "hrsh7th/nvim-cmp" },
+		{ "onsails/lspkind.nvim" },
 
 		-- Snippets
 		{ "rafamadriz/friendly-snippets" },
@@ -43,13 +44,39 @@ return {
 			["<C-Space>"] = cmp.mapping.complete(),
 		})
 
+		-- required for formatting of nvim-cmp
+		local lspkind = require("lspkind")
+
 		lsp.setup_nvim_cmp({
 			mapping = cmp_mappings,
+			sources = cmp.config.sources({
+				{ name = "nvim_lua" },
+				{ name = "nvim_lsp" },
+				{ name = "luasnip" },
+			}, {
+				{ name = "path" },
+				{ name = "buffer", keyword_length = 5 },
+				{ name = "cmdline" },
+			}),
 			sorting = {
 				comparators = {
 					cmp_compare.offset,
 					cmp_compare.exact,
 					cmp_compare.score,
+					-- function should sort propositions starting with underscores at
+					-- the end of the list instead of the beginning,
+					-- taken from https://github.com/tjdevries/config_manager/blob/83b6897e83525efdfdc24001453137c40373aa00/xdg_config/nvim/after/plugin/completion.lua#L129-L155
+					function(entry1, entry2)
+						local _, entry1_under = entry1.completion_item.label:find("^_+")
+						local _, entry2_under = entry2.completion_item.label:find("^_+")
+						entry1_under = entry1_under or 0
+						entry2_under = entry2_under or 0
+						if entry1_under > entry2_under then
+							return false
+						elseif entry1_under < entry2_under then
+							return true
+						end
+					end,
 					cmp_compare.recently_used,
 					cmp_compare.locality,
 					cmp_compare.kind,
@@ -57,6 +84,28 @@ return {
 					cmp_compare.length,
 					cmp_compare.order,
 				},
+			},
+			formatting = {
+				format = lspkind.cmp_format({
+					mode = "symbol",
+					preset = "default",
+					ellipsis_char = "...",
+					symbol_map = {
+						Class = "C",
+						Field = "F",
+						Unit = "U",
+					},
+					menu = {
+						buffer = "[buf]",
+						nvim_lsp = "[LSP]",
+						nvim_lua = "[api]",
+						path = "[path]",
+						luasnip = "[snip]",
+					},
+				}),
+			},
+			experimental = {
+				native_menu = false,
 			},
 		})
 
