@@ -17,6 +17,10 @@ vim.opt.shiftwidth = 4
 -- convert tabs to spaces
 vim.opt.expandtab = true
 
+-- highlight cursor position
+vim.opt.cursorline = true
+vim.opt.cursorcolumn = true
+
 -- does smart autoindenting when starting a new line
 vim.opt.autoindent = true
 vim.opt.smartindent = true
@@ -74,6 +78,9 @@ vim.opt.splitright = true
 -- open horizontal split down
 vim.opt.splitbelow = true
 
+-- use system clipboard as default
+vim.opt.clipboard = "unnamedplus"
+
 -- KEY MAPPINGS >>>>>>>>
 
 -- moves selected lines up or down
@@ -109,27 +116,27 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
 
 -- open :help in vertical split
 vim.api.nvim_create_autocmd("BufWinEnter", {
-	group = vim.api.nvim_create_augroup("help_window_right", {}),
-	pattern = { "*.txt" },
-	callback = function()
-		if vim.o.filetype == "help" then
-			vim.cmd.wincmd("L")
-		end
-	end,
+    group = vim.api.nvim_create_augroup("help_window_right", {}),
+    pattern = { "*.txt" },
+    callback = function()
+        if vim.o.filetype == "help" then
+            vim.cmd.wincmd("L")
+        end
+    end,
 })
 
 -- PLUGINS >>>>>>>>
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable",
-		lazypath,
-	})
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable",
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
