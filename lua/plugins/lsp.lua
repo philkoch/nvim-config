@@ -50,7 +50,13 @@ return {
             mapping = cmp_mappings,
             sources = cmp.config.sources({
                 { name = "nvim_lua" },
-                { name = "nvim_lsp" },
+                {
+                    name = "nvim_lsp",
+                    -- Dont suggest Text from nvim_lsp
+                    entry_filter = function(entry, ctx)
+                        return require("cmp").lsp.CompletionItemKind.Text ~= entry:get_kind()
+                    end,
+                },
                 { name = "luasnip" },
             }, {
                 { name = "path" },
