@@ -30,8 +30,6 @@ The following plugins are used:
 | [neodev](https://github.com/folke/neodev.nvim) | autocompletion for neovim apis |
 | [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) | general purpose lsp, runs formatters/linters |
 
-
-
 ---
 
 ## nvim-dap-python post-install
@@ -50,6 +48,7 @@ debugpy/bin/python -m pip install debugpy
 ```
 
 in neovim run (:warning:treesitter-plugin required!!)
+
 ```
 :TSInstall python
 ```
@@ -65,14 +64,19 @@ with `*.py`-files
 [deno](https://deno.land/) is required for rendering markdown. Install it
 from the package repo of your distro.
 
-
 ## Improvements / Issues
+
 - [ ] re-order dap-ui windows (variables top left, watches bottom left)
 - [ ] :h marks
 - [ ] check out lazy loading plugins
 - [ ] open quickfix list in telescope for file preview
-
 - [ ] check out [refactoring.nvim](https://github.com/ThePrimeagen/refactoring.nvim)
+- [ ] nvim-cmp remove text-proposals. They're mostly not what I want.
+- [ ] add test-runner which displays the results per test in quickfix lists -- see <https://www.youtube.com/watch?v=cf72gMBrsI0> for inspiration
+- [ ] disable colorcolumn when no line is longer than the configured length
+- [ ] check out sessions, see if it's possible to remember last open windows for each project
+- [ ] gl needs to just display the diagnosis popup instead of launching telescope
+- [ ] add telescope for help-pages
 - [x] [Debug pytest file](https://github.com/mfussenegger/nvim-dap-python/issues/74)
 - [x] dap -- see if it's possible that not all buffers are changed to the current breakpoint
 - [x] lsp json server missing / not starting
