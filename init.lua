@@ -19,7 +19,6 @@ vim.opt.expandtab = true
 
 -- highlight cursor position
 vim.opt.cursorline = true
-vim.opt.cursorcolumn = true
 
 -- does smart autoindenting when starting a new line
 vim.opt.autoindent = true

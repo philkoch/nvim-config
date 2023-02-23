@@ -74,6 +74,7 @@ from the package repo of your distro.
 - [ ] disable colorcolumn when no line is longer than the configured length
 - [ ] check out sessions, see if it's possible to remember last open windows for each project
 - [ ] color line where debugger is currently on
+- [ ] restart last debug-session on shortcut
 - [x] nvim-cmp remove text-proposals. They're mostly not what I want.
 - [x] gl needs to just display the diagnosis popup instead of launching telescope
 - [x] add telescope for help-pages
