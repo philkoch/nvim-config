@@ -15,7 +15,6 @@ return {
         { "hrsh7th/cmp-path" },
         { "saadparwaiz1/cmp_luasnip" },
         { "hrsh7th/cmp-nvim-lua" },
-        { "hrsh7th/cmp-cmdline" },
         { "hrsh7th/nvim-cmp" },
         { "onsails/lspkind.nvim" },
 
@@ -49,19 +48,19 @@ return {
         lsp.setup_nvim_cmp({
             mapping = cmp_mappings,
             sources = cmp.config.sources({
-                { name = "nvim_lua" },
+                { name = "nvim_lua", keyword_length = 2 },
                 {
                     name = "nvim_lsp",
                     -- Dont suggest Text from nvim_lsp
                     entry_filter = function(entry, ctx)
                         return require("cmp").lsp.CompletionItemKind.Text ~= entry:get_kind()
                     end,
+                    keyword_length = 2,
                 },
-                { name = "luasnip" },
+                { name = "luasnip",  keyword_length = 2 },
             }, {
-                { name = "path" },
+                { name = "path",   keyword_length = 3 },
                 { name = "buffer", keyword_length = 5 },
-                { name = "cmdline" },
             }),
             sorting = {
                 comparators = {
@@ -103,10 +102,11 @@ return {
                     },
                     menu = {
                         buffer = "[buf]",
-                        nvim_lsp = "[LSP]",
-                        nvim_lua = "[api]",
+                        nvim_lsp = "[lsp]",
+                        nvim_lua = "[lua]",
                         path = "[path]",
                         luasnip = "[snp]",
+                        cmdline = "[cmd]",
                     },
                 }),
             },
@@ -174,7 +174,7 @@ return {
         vim.diagnostic.config({
             virtual_text = true,
             signs = true,
-            underline = true,
+            underline = false,
             update_in_insert = false,
             severity_sort = true,
         })
