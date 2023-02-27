@@ -6,7 +6,7 @@ return {
 		ts_update()
 	end,
 	config = function()
-		require'nvim-treesitter.configs'.setup {
+		require("nvim-treesitter.configs").setup({
 			ensure_installed = { "c", "lua", "vim", "help", "python", "rust" },
 			-- Install parsers synchronously (only applied to `ensure_installed`)
 			sync_install = false,
@@ -28,5 +28,6 @@ return {
 				end,
 				additional_vim_regex_highlighting = false,
 			},
-		}end,
+		})
+	end,
 }
