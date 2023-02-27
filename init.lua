@@ -8,7 +8,7 @@ vim.opt.nu = true
 
 -- relative line numbers
 vim.opt.relativenumber = true
-
+--
 -- set tabs to 4 spaces instead of 8
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -144,3 +144,6 @@ require("lazy").setup("plugins", { defaults = { lazy = false } })
 -- COLORSCHEME >>>>>>>
 -- set colorscheme AFTER loading plugins
 vim.cmd.colorscheme("catppuccin")
+
+-- highlights the current line number
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#f9e2af", bg = "#33313a", bold = true })
