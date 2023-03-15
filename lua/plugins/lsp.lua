@@ -40,12 +40,29 @@ return {
 			["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
 			["<C-y>"] = cmp.mapping.confirm({ select = true }),
 			["<C-Space>"] = cmp.mapping.complete(),
+			["<Tab>"] = vim.NIL,
+			["<S-Tab>"] = vim.NIL,
+			["<Enter>"] = vim.NIL,
 		})
 
 		-- required for formatting of nvim-cmp
 		local lspkind = require("lspkind")
 
 		lsp.setup_nvim_cmp({
+			enabled = function()
+				-- disable completion in comments
+				local context = require("cmp.config.context")
+				-- keep command mode completion enabled when cursor is in a comment
+				if vim.api.nvim_get_mode().mode == "c" then
+					return true
+				else
+					return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
+				end
+			end,
+			preselect = "none",
+			completion = {
+				completeopt = "menu,menuone,noinsert,noselect",
+			},
 			mapping = cmp_mappings,
 			sources = cmp.config.sources({
 				{ name = "nvim_lua", keyword_length = 2 },
@@ -59,7 +76,7 @@ return {
 				{ name = "luasnip", keyword_length = 2 },
 			}, {
 				{ name = "path", keyword_length = 3 },
-				{ name = "buffer", keyword_length = 5 },
+				{ name = "buffer", keyword_length = 4 },
 			}),
 			sorting = {
 				comparators = {
@@ -83,7 +100,6 @@ return {
 					cmp_compare.recently_used,
 					cmp_compare.locality,
 					cmp_compare.kind,
-					-- cmp_compare.sort_text,
 					cmp_compare.length,
 					cmp_compare.order,
 				},
