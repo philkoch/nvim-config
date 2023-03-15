@@ -82,7 +82,7 @@ return {
 				b = { "<cmd>lua require('dap').toggle_breakpoint()<CR>", "Toggle Breakpoint" },
 				o = { "<cmd>lua require('dap').step_over()<CR>", "Step Over" },
 				i = { "<cmd>lua require('dap').step_into()<CR>", "Step Into" },
-				u = { "<cmd>lua require('dap').step_into()<CR>", "Step Out" },
+				u = { "<cmd>lua require('dap').step_out()<CR>", "Step Out" },
 				r = { "<cmd>lua require('dap').restart()<CR>", "Restart Session" },
 				p = { "<cmd>lua require('dap').repl.open()<CR>", "Open REPL" },
 				c = {
