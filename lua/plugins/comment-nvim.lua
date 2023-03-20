@@ -2,6 +2,7 @@
 
 return {
 	"numToStr/Comment.nvim",
+	lazy = true,
 	config = function()
 		local utils = require("Comment.utils")
 

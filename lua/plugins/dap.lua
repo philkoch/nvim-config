@@ -5,6 +5,7 @@
 return {
 	"mfussenegger/nvim-dap-python",
 	dependencies = { "mfussenegger/nvim-dap" },
+	lazy = true,
 	config = function()
 		local dap_py = require("dap-python")
 		dap_py.setup("~/.config/nvim/.virtualenvs/debugpy/bin/python")

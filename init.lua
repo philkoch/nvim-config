@@ -115,27 +115,27 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
 
 -- open :help in vertical split
 vim.api.nvim_create_autocmd("BufWinEnter", {
-    group = vim.api.nvim_create_augroup("help_window_right", {}),
-    pattern = { "*.txt" },
-    callback = function()
-        if vim.o.filetype == "help" then
-            vim.cmd.wincmd("L")
-        end
-    end,
+	group = vim.api.nvim_create_augroup("help_window_right", {}),
+	pattern = { "*.txt" },
+	callback = function()
+		if vim.o.filetype == "help" then
+			vim.cmd.wincmd("L")
+		end
+	end,
 })
 
 -- PLUGINS >>>>>>>>
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable",
-        lazypath,
-    })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable",
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -147,3 +147,5 @@ vim.cmd.colorscheme("catppuccin")
 
 -- highlights the current line number
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#f9e2af", bg = "#33313a", bold = true })
+-- color of line the debugger is on
+vim.api.nvim_set_hl(0, "debugPC", { fg = "#f9e2af", bg = "#33313a", bold = true })

@@ -1,6 +1,7 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	version = "0.1.1",
+	lazy = false,
 	dependencies = {
 		{ "nvim-lua/plenary.nvim" },
 		-- fuzzy finder file explorer
