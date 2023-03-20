@@ -1,6 +1,6 @@
 return {
 	"numToStr/FTerm.nvim",
-	lazy = true,
+	lazy = false,
 	config = function()
 		require("FTerm").setup({
 			border = "single",
