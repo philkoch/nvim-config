@@ -30,6 +30,7 @@ The following plugins are used:
 | [neodev](https://github.com/folke/neodev.nvim) | autocompletion for neovim apis |
 | [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) | general purpose lsp, runs formatters/linters |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | git information in buffers |
+| [auto-session](https://github.com/rmagatti/auto-session) | saves and restores the last buffer layout |
 
 ---
 
