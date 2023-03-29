@@ -31,6 +31,7 @@ The following plugins are used:
 | [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) | general purpose lsp, runs formatters/linters |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | git information in buffers |
 | [auto-session](https://github.com/rmagatti/auto-session) | saves and restores the last buffer layout |
+| [refactoring](https://github.com/ThePrimeagen/refactoring.nvim) | refactoring functionality like extracting functions or variables |
 
 ---
 

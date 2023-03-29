@@ -83,7 +83,16 @@ vim.opt.splitbelow = true
 -- use system clipboard as default
 vim.opt.clipboard = "unnamedplus"
 
+-- see :h shortmess for options
+vim.opt.shortmess = "filmxstToOF"
+
+-- treeview in netrw
+vim.g.netrw_liststyle = 3
+
 -- KEY MAPPINGS >>>>>>>>
+
+-- netrw file explorer
+vim.api.nvim_set_keymap("n", "<leader>e", ":Lexplore<CR> :vertical resize 30<CR>", { noremap = true })
 
 -- moves selected lines up or down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -118,27 +127,27 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
 
 -- open :help in vertical split
 vim.api.nvim_create_autocmd("BufWinEnter", {
-	group = vim.api.nvim_create_augroup("help_window_right", {}),
-	pattern = { "*.txt" },
-	callback = function()
-		if vim.o.filetype == "help" then
-			vim.cmd.wincmd("L")
-		end
-	end,
+    group = vim.api.nvim_create_augroup("help_window_right", {}),
+    pattern = { "*.txt" },
+    callback = function()
+        if vim.o.filetype == "help" then
+            vim.cmd.wincmd("L")
+        end
+    end,
 })
 
 -- PLUGINS >>>>>>>>
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable",
-		lazypath,
-	})
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable",
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
