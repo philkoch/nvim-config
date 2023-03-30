@@ -14,7 +14,6 @@ The following plugins are used:
 | [lsp-zero](https://github.com/VonHeikemen/lsp-zero.nvim) | Language Server for basic IDE functionality |
 | [nvim-dap-python](https://github.com/mfussenegger/nvim-dap-python) | Debugger for python | yes |
 | [telescope-nvim](https://github.com/nvim-telescope/telescope.nvim) | Fuzzy Finder |
-| [telescope-file-browser](https://github.com/nvim-telescope/telescope-file-browser.nvim) | file explorer |
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | Syntax Highlighting and more syntax-tree functionality |
 | [undotree](https://github.com/mbbill/undotree) | keeps track of changes in files |
 | [trouble.nvim](https://github.com/folke/trouble.nvim) | in-line diagnostics |
