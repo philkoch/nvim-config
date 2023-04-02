@@ -32,6 +32,7 @@ The following plugins are used:
 | [auto-session](https://github.com/rmagatti/auto-session) | saves and restores the last buffer layout |
 | [refactoring](https://github.com/ThePrimeagen/refactoring.nvim) | refactoring functionality like extracting functions or variables |
 | [treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) | displays the of the current function at the top |
+| [neotest](https://github.com/nvim-neotest/neotest) | prettier tests |
 
 ---
 
