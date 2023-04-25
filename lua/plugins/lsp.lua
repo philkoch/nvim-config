@@ -178,6 +178,8 @@ return {
                     local venv_path = vim.fn.trim(vim.fn.system("poetry env info -p"))
                     vim.env.VIRTUAL_ENV = venv_path
                     vim.env.PATH = venv_path .. "/bin:" .. vim.env.PATH
+                    -- set pythonpath for pytest/neotest
+                    vim.env.PYTHONPATH = vim.fn.getcwd()
                     config.settings.python.pythonPath = venv_path .. "/bin/python"
                 end
             end,

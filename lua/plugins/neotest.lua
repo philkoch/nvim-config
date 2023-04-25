@@ -9,9 +9,13 @@ return {
     lazy = false,
     config = function()
         require("neotest").setup({
+            quickfix = {
+                open = false,
+            },
             adapters = {
                 require("neotest-python")({
                     dap = { justMyCode = false },
+                    args = { "--cov", "-vvv", "--ignore=tests/resources/integration" },
                 }),
             },
             status = {

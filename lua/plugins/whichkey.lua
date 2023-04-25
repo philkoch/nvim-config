@@ -106,11 +106,11 @@ return {
             t = {
                 name = " TEST",
                 t = {
-                    "<cmd>lua require('neotest').run.run()<CR><cmd>lua require('neotest').summary.toggle()<CR>",
+                    "<cmd>lua require('neotest').run.run()<CR><cmd>lua require('neotest').summary.open()<CR>",
                     "Run nearest test",
                 },
                 f = {
-                    "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR><cmd>lua require('neotest').summary.toggle()<CR>",
+                    "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR><cmd>lua require('neotest').summary.open()<CR>",
                     "Test current file",
                 },
                 x = { "<cmd>lua require('neotest').run.stop()<CR>", "Stop test run" },
