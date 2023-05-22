@@ -113,6 +113,8 @@ return {
                     "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR><cmd>lua require('neotest').summary.open()<CR>",
                     "Test current file",
                 },
+
+                l = { "<cmd>lua require('neotest').run.run_last()<CR>", "Run last configuration" },
                 x = { "<cmd>lua require('neotest').run.stop()<CR>", "Stop test run" },
                 s = { "<cmd>lua require('neotest').summary.toggle()<CR>", "Toggle test summary" },
                 o = { "<cmd>lua require('neotest').output_panel.toggle()<CR>", "Toggle test output" },
