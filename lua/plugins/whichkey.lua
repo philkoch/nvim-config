@@ -70,6 +70,7 @@ return {
                 end,
                 "  .MD PREVIEW",
             },
+            e = { "<cmd>NvimTreeToggle<CR>", " EXPLORER" },
         }, { prefix = "<leader>" })
 
         -- debugger

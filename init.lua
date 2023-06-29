@@ -1,5 +1,11 @@
 -- OPTIONS >>>>>>>>
+--
+-- disable netrw because of possible problems with nvim-tree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
 -- set leader key to <Space>
 vim.g.mapleader = " "
 
@@ -41,9 +47,6 @@ vim.opt.incsearch = true
 -- case-sensitive search when using uppercase letters,
 -- case-insensitive otherwise
 vim.opt.smartcase = true
-
--- use terminal gui colors
-vim.opt.termguicolors = true
 
 -- minimum number of screen lines to keep above and below the cursor
 vim.opt.scrolloff = 8
@@ -92,7 +95,7 @@ vim.g.netrw_liststyle = 3
 -- KEY MAPPINGS >>>>>>>>
 
 -- netrw file explorer
-vim.api.nvim_set_keymap("n", "<leader>e", ":Lexplore<CR> :vertical resize 30<CR>", { noremap = true })
+-- vim.api.nvim_set_keymap("n", "<leader>e", ":Lexplore<CR> :vertical resize 30<CR>", { noremap = true })
 
 -- moves selected lines up or down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
