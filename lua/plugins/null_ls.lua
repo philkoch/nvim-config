@@ -31,6 +31,9 @@ return {
                 -- markdown
                 null_ls.builtins.formatting.markdownlint,
 
+                -- typescript
+                null_ls.builtins.diagnostics.eslint,
+
                 -- xml
                 null_ls.builtins.formatting.xmllint,
             },
