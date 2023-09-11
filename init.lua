@@ -44,6 +44,7 @@ vim.opt.undofile = true
 -- highlight results
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
+vim.opt.ignorecase = true
 -- case-sensitive search when using uppercase letters,
 -- case-insensitive otherwise
 vim.opt.smartcase = true
