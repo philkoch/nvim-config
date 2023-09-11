@@ -109,12 +109,6 @@ return {
                     preset = "default",
                     mode = "symbol",
                     ellipsis_char = "...",
-                    -- symbol_map = {
-                    -- 	-- these preconfigured symbols don't work with my font
-                    -- 	Class = "C",
-                    -- 	Field = "F",
-                    -- 	Unit = "U",
-                    -- },
                     menu = {
                         buffer = "[buf]",
                         nvim_lsp = "[lsp]",
@@ -175,7 +169,13 @@ return {
                 local match = vim.fn.glob(vim.fn.getcwd() .. "/poetry.lock")
                 local cur_venv = vim.env.VIRTUAL_ENV
                 if match ~= "" and cur_venv == nil or cur_venv == "" then
-                    local venv_path = vim.fn.trim(vim.fn.system("poetry env info -p"))
+                    -- current poetry version prints out errors in addition to the path
+                    -- when the pyproject toml contains deprecated definitions.
+                    -- the warnings are removed here
+                    local poetry_env_output_with_warnings = vim.fn.trim(vim.fn.system("poetry env info -p"))
+                    local lines = vim.fn.split(poetry_env_output_with_warnings, "\n")
+                    local venv_path = lines[#lines]
+                    print(venv_path)
                     vim.env.VIRTUAL_ENV = venv_path
                     vim.env.PATH = venv_path .. "/bin:" .. vim.env.PATH
                     -- set pythonpath for pytest/neotest
