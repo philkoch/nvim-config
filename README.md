@@ -27,12 +27,14 @@ The following plugins are used:
 | [peek](https://github.com/toppair/peek) | markdown file preview |
 | [vim-wakatime](https://github.com/wakatime/vim-wakatime) | easy time-tracking |
 | [neodev](https://github.com/folke/neodev.nvim) | autocompletion for neovim apis |
-| [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) | general purpose lsp, runs formatters/linters |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | git information in buffers |
 | [auto-session](https://github.com/rmagatti/auto-session) | saves and restores the last buffer layout |
 | [refactoring](https://github.com/ThePrimeagen/refactoring.nvim) | refactoring functionality like extracting functions or variables |
 | [treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) | displays the of the current function at the top |
 | [neotest](https://github.com/nvim-neotest/neotest) | prettier tests |
+| [conform.nvim](https://github.com/stevearc/conform.nvim) | formatters |
+| [nvim-lint](https://github.com/mfussenegger/nvim-lint) | linters |
+| [mason.nviml](https://github.com/williamboman/mason.nvim) | portable package manager |
 
 ---
 
@@ -57,11 +59,9 @@ in neovim run (:warning:treesitter-plugin required!!)
 :TSInstall python
 ```
 
-## formatter post-install
+## formatter / linter post-install
 
-The formatter uses an external instance of black, you need
-[black](https://github.com/psf/black) installed on your system, when working
-with `*.py`-files
+Use `:Mason` to open Mason and install the formatters and linters you want to use.
 
 ## peek pre-install
 

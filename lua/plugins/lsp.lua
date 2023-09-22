@@ -175,7 +175,6 @@ return {
                     local poetry_env_output_with_warnings = vim.fn.trim(vim.fn.system("poetry env info -p"))
                     local lines = vim.fn.split(poetry_env_output_with_warnings, "\n")
                     local venv_path = lines[#lines]
-                    print(venv_path)
                     vim.env.VIRTUAL_ENV = venv_path
                     vim.env.PATH = venv_path .. "/bin:" .. vim.env.PATH
                     -- set pythonpath for pytest/neotest
