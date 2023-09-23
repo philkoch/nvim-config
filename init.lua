@@ -131,27 +131,27 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
 
 -- open :help in vertical split
 vim.api.nvim_create_autocmd("BufWinEnter", {
-    group = vim.api.nvim_create_augroup("help_window_right", {}),
-    pattern = { "*.txt" },
-    callback = function()
-        if vim.o.filetype == "help" then
-            vim.cmd.wincmd("L")
-        end
-    end,
+	group = vim.api.nvim_create_augroup("help_window_right", {}),
+	pattern = { "*.txt" },
+	callback = function()
+		if vim.o.filetype == "help" then
+			vim.cmd.wincmd("L")
+		end
+	end,
 })
 
 -- PLUGINS >>>>>>>>
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable",
-        lazypath,
-    })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable",
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -165,3 +165,14 @@ vim.cmd.colorscheme("catppuccin")
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#f9e2af", bg = "#33313a", bold = true })
 -- color of line the debugger is on
 vim.api.nvim_set_hl(0, "debugPC", { fg = "#f9e2af", bg = "#33313a", bold = true })
+
+-- highlights for indent-blankline plugin
+vim.opt.termguicolors = true
+vim.opt.list = true
+
+vim.api.nvim_set_hl(0, "IndentBlanklineIndent1", { fg = "#E06C75", nocombine = true })
+vim.api.nvim_set_hl(0, "IndentBlanklineIndent2", { fg = "#E5C07B", nocombine = true })
+vim.api.nvim_set_hl(0, "IndentBlanklineIndent3", { fg = "#98C379", nocombine = true })
+vim.api.nvim_set_hl(0, "IndentBlanklineIndent4", { fg = "#56B6C2", nocombine = true })
+vim.api.nvim_set_hl(0, "IndentBlanklineIndent5", { fg = "#61AFEF", nocombine = true })
+vim.api.nvim_set_hl(0, "IndentBlanklineIndent6", { fg = "#C678DD", nocombine = true })

@@ -35,6 +35,7 @@ The following plugins are used:
 | [conform.nvim](https://github.com/stevearc/conform.nvim) | formatters |
 | [nvim-lint](https://github.com/mfussenegger/nvim-lint) | linters |
 | [mason.nviml](https://github.com/williamboman/mason.nvim) | portable package manager |
+| [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim) | vertical lines to highlight indentation |
 
 ---
 
@@ -67,3 +68,7 @@ Use `:Mason` to open Mason and install the formatters and linters you want to us
 
 [deno](https://deno.land/) is required for rendering markdown. Install it
 from the package repo of your distro.
+
+## indent-blankline
+
+add highlight-groups in init
