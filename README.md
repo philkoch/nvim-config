@@ -36,6 +36,7 @@ The following plugins are used:
 | [nvim-lint](https://github.com/mfussenegger/nvim-lint) | linters |
 | [mason.nviml](https://github.com/williamboman/mason.nvim) | portable package manager |
 | [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim) | vertical lines to highlight indentation |
+| [todo-comments](https://github.com/folke/todo-comments.nvim) | highlights TODO's in code |
 
 ---
 
