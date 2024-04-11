@@ -38,6 +38,8 @@ The following plugins are used:
 | [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim) | vertical lines to highlight indentation |
 | [todo-comments](https://github.com/folke/todo-comments.nvim) | highlights TODO's in code |
 | [noice.nvim](https://github.com/folke/noice.nvim) | prettier messages and statusline |
+| [aerial.nvim](https://github.com/stevearc/aerial.nvim) | outline |
+
 
 ---
 
