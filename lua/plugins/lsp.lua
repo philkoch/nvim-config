@@ -80,25 +80,26 @@ return {
 			}, {}),
 			sorting = {
 				comparators = {
-					cmp_compare.locality,
-					cmp_compare.recently_used,
-					cmp_compare.score,
 					cmp_compare.offset,
-					cmp_compare.order,
+					cmp_compare.exact,
+					cmp_compare.score,
 					-- function should sort propositions starting with underscores at
 					-- the end of the list instead of the beginning,
 					-- taken from https://github.com/tjdevries/config_manager/blob/83b6897e83525efdfdc24001453137c40373aa00/xdg_config/nvim/after/plugin/completion.lua#L129-L155
-					-- function(entry1, entry2)
-					-- 	local _, entry1_under = entry1.completion_item.label:find("^__")
-					-- 	local _, entry2_under = entry2.completion_item.label:find("^__")
-					-- 	entry1_under = entry1_under or 0
-					-- 	entry2_under = entry2_under or 0
-					-- 	if entry1_under > entry2_under then
-					-- 		return false
-					-- 	elseif entry1_under <= entry2_under then
-					-- 		return true
-					-- 	end
-					-- end,
+					function(entry1, entry2)
+						local _, entry1_under = entry1.completion_item.label:find("^__")
+						local _, entry2_under = entry2.completion_item.label:find("^__")
+						entry1_under = entry1_under or 0
+						entry2_under = entry2_under or 0
+						if entry1_under > entry2_under then
+							return false
+						elseif entry1_under <= entry2_under then
+							return true
+						end
+					end,
+					cmp_compare.recently_used,
+					cmp_compare.locality,
+					cmp_compare.order,
 					-- cmp_compare.exact,
 					-- cmp_compare.kind,
 					-- cmp_compare.length,
