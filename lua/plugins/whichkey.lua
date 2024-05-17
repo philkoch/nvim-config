@@ -51,6 +51,7 @@ return {
 				q = "Quick Documentation",
 				s = "Signature Help",
 				o = { "<cmd>AerialToggle<CR>", "Outline" },
+				R = { "<cmd>LspRestart<CR>", "Restart LSP" },
 			},
 		}, { prefix = "<leader>" })
 
